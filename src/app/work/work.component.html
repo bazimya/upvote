@@ -1,0 +1,44 @@
+<div class="container-fluid">
+  <div class="jumbotron">
+    <app-work-form (addQuote)="addNewwork($event)"></app-work-form>
+
+    <!-- <app-work-details
+    *ngIf="worker1.showAuthor"
+    [worker1]="worker1"
+    (isComplete)="deletework($event, i)"
+  ></app-work-details> -->
+  </div>
+
+  <div *ngFor="let gutora of workers; let i = index" class="items" class="well">
+    <ul>
+      
+      <label>{{ gutora.name }}</label><br>
+      <label>{{ gutora.more }}</label><br>
+      <label>{{ gutora.author }}</label><br>
+      <label>{{ gutora.notedDate | dateCount  }}</label><br>
+      <label>{{ gutora.completeDate }}</label><br>
+      <div class="container">
+        <div class="well">
+          <label>down</label>
+      <label style="background:black;color:wheat; width: 20px; align-content: center">{{ gutora.downvotes }}</label><br>
+     <label>upvotes</label>
+      <label style="background:black;color:wheat; width: 20px; align-content: center">{{ gutora.upvotes }}</label><br>
+      
+    </div>
+  </div>
+      <button (click)="deletworkall(i)" class="btn btn-info btn-xs">
+        <i class="fa fa-sort">delete</i></button
+      >&nbsp;
+      <button (click)="upvote(i)" class="btn btn-primary btn-xs">
+        <i class="up"></i>upvote<img
+          
+        /></button
+      >&nbsp;&nbsp;
+      <button (click)="downvote(i)" class="btn btn-danger btn-xs">
+        <i class="down"></i>downvote
+        
+      </button>
+     
+  </ul>
+</div>
+</div>

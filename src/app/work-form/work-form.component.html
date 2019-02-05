@@ -1,0 +1,58 @@
+<div class="container">
+  <p>
+    <em><strong>here you can add a new quote with your Name</strong></em>
+  </p>
+  <form (ngSubmit)="submitQuote()" #quoteForm="ngForm">
+    <div class="form-group">
+      <label for="name"> <strong>Please Enter your Quote here: </strong></label>
+      <textarea
+        class="form-control"
+        id="name"
+        rows="4"
+        [(ngModel)]="newQuote.name"
+        name="name"
+        required
+      ></textarea>
+    </div>
+    <div class="form-group">
+      <label for="author"> <strong>This is what Author said :</strong></label>
+      <input
+        type="text"
+        class="form-control"
+        id="author"
+        [(ngModel)]="newQuote.author"
+        name="name"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="fan"><strong>Written by This Fan:</strong></label>
+      <input
+        type="text"
+        class="form-control"
+        id="fan"
+        [(ngModel)]="newQuote.fan"
+        name="name"
+        required
+      />
+    </div>
+    <div class="form-group">
+      <label for="complete" required><strong> Completion Date</strong></label>
+      <input
+        type="date"
+        id="complete"
+        [(ngModel)]="newQuote.completeDate"
+        name="completeDate"
+        #completeDate="ngModel"
+        required
+      />
+    </div>
+    <button type="submit" id="go" required>Add quote</button>
+    <button type="submit" id="back" required>add multiple quote</button>
+  </form>
+</div>
+<div class="footer">
+  <footer>
+   
+  </footer>
+</div>
